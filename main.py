@@ -32,7 +32,6 @@ def init_socket(ip_addr):
         s.send("GET /?{} HTTP/1.1\r\n".format(random.randint(0, 2000)).encode('utf-8'))
         for header in regular_headers:
             s.send("{}\r\n".format(header).encode("utf-8"))
-        # s.send("X-a: {}\r\n".format(random.randint(1, 5000)).encode('utf-8'))
     except socket.error as err:
         log(err, level=2)
     return s
